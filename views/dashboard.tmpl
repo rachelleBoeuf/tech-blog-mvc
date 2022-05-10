@@ -1,0 +1,18 @@
+<div class="row post-container">
+  <div class="dashboard-list ">
+    {{> project-list}}
+  </div>
+
+  <!-- New Post button -->
+  <div class="col-xs-12">
+    <a href="/NewPost" class="btn btn-primary btn-block mb-4">+ Create Post</a>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    $(".project-container").click(function() {
+      document.location = '/EditPost/' + $(this).data('id');
+    });
+  });
+</script>

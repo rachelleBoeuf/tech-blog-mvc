@@ -1,0 +1,123 @@
+header {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top: 1px solid #9f5f5f;
+  border-left: 1px solid #9f5f5f;
+  border-right: 1px solid #9f5f5f;
+  background-color: #FFB6C1;
+  height: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn.btn-primary {
+  background-color: #FFB6C1;
+  border: 1px dotted #9f5f5f;
+  margin-bottom: 5px;
+}
+
+.btn.btn-primary:hover {
+  background-color: #d99aa4;
+  border: 1px dotted #9f5f5f;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.navbar, .navbar div {
+  height: 100%;
+}
+
+.navbar ul {
+  width: 100%;
+  padding: 10px;
+}
+
+ul li {
+  text-align: center;
+  color: white;
+}
+
+ul li .nav-link:hover { font-weight: bold }
+ul li .nav-link {
+  color: white;
+}
+
+footer {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom: 1px solid #9f5f5f;
+  border-left: 1px solid #9f5f5f;
+  border-right: 1px solid #9f5f5f;
+  background-color: #FFB6C1;
+  height: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.post-container {
+
+}
+
+.post-wrapper {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.post-header {
+  padding: 5px;
+  background-color: #eeaab3;
+  color: white;
+  font-weight: bold;
+  border: 1px dashed #9f5f5f;
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.post-content {
+  padding: 15px;
+  border-left: 1px dashed #9f5f5f;
+  border-right: 1px dashed #9f5f5f;
+  border-bottom: 1px dashed #9f5f5f;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: white;
+}
+
+.post-date {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.center {
+  text-align: center;
+}
+
+.post-creator {
+  text-align: right;
+  word-wrap: none;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.dashboard-list .post-wrapper {
+  border: 0px solid transparent;
+  cursor: pointer;
+}
+
+.dashboard-list .post-content {
+  display: none;
+}
+
+.dashboard-list .post-header {
+  border-radius: 10px;
+  cursor: pointer;
+}

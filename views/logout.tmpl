@@ -1,0 +1,33 @@
+<div class="row post-container">
+    <div class="project-container col-sm-12">
+        <div class="post-wrapper">
+            <div class="row">
+                <div class="post-header col-sm-12">
+                    <div class="row">
+                        <div class="project-name col-sm-7">Logout</div>
+                
+                    </div>
+                </div>
+            </div>
+        <div class="post-content row">
+            You are being logged out of the system... please wait :)
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    jQuery.ajax({
+      url: '/api/users/logout',
+      type: 'post',
+      success: function() {
+        //login success send to my dashboard
+        document.location = '/';
+      },
+      error: function(xhr, status, error) {
+        alert('Logout failed... contact system administrator!');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,75 @@
+<div class="row post-container">
+  <div class="project-container col-sm-12">
+    <div class="post-wrapper">
+      <div class="row">
+        <div class="post-header col-sm-12">
+          <div class="row">
+              <div class="project-name col-sm-7">Edit Post</div>
+            </div>
+        </div>
+      </div>
+      <div class="post-content row">
+        <form enctype="multipart/form-data" method="PUT">
+          <input type="hidden" name="id" id="form-id" value="{{data.id}}" />
+
+          <!-- Title input -->
+          <div class="form-outline mb-4">
+            <input type="text" name="title" id="form-title" value="{{data.name}}" class="form-control" />
+            <label class="form-label" for="">Post Title</label>
+          </div>
+        
+          <!-- Content input -->
+          <div class="form-outline mb-4">
+            <input type="text" rows="5" name="content" id="form-content" value="{{data.description}}" class="form-control" />
+            <label class="form-label" for="">Post Content</label>
+          </div>
+        
+          <!-- Funding input -->
+          <div class="form-outline mb-4">
+            <input type="text" name="funding" id="form-funding" value="{{data.needed_funding}}" class="form-control" />
+            <label class="form-label" for="">Needed Funding</label>
+          </div>
+
+          <!-- Submit button -->
+          <button id="form-button" type="button" class="btn btn-primary btn-block mb-4">Save Changes</button>
+          <button id="delete-button" type="button" class="btn btn-danger btn-block mb-4">Delete post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('form-button').addEventListener('click', function() {
+      jQuery.ajax({
+        url: '/api/projects/' + jQuery("#form-id").val(),
+        type: 'put',
+        data: JSON.stringify({ name: jQuery("#form-title").val(), description: jQuery("#form-content").val(), needed_funding: jQuery("#form-funding").val()}),
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function() {
+          //login success send to my dashboard
+          document.location = '/Dashboard';
+        },
+        error: function(xhr, status, error) {
+          alert('Error create new Post! Contact Support');
+        }
+      });
+    });
+
+    document.getElementById('delete-button').addEventListener('click', function() {
+      jQuery.ajax({
+        url: '/api/projects/' + jQuery("#form-id").val(),
+        type: 'delete',
+        success: function() {
+          //login success send to my dashboard
+          document.location = '/Dashboard';
+        },
+        error: function(xhr, status, error) {
+          alert('Error deleting Post! Contact Support');
+        }
+      });
+    });
+  });
+</script>

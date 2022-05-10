@@ -1,0 +1,58 @@
+<div class="row post-container">
+  <div class="project-container col-sm-12">
+    <div class="post-wrapper">
+      <div class="row">
+        <div class="post-header col-sm-12">
+            <div class="row">
+              <div class="project-name col-sm-7">Login</div>
+            </div>
+        </div>
+      </div>
+      <div class="post-content row">
+        <form enctype="multipart/form-data" method="POST">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" name="email" id="form-email" class="form-control" />
+            <label class="form-label" for="">Email Address</label>
+          </div>
+        
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" name="password" id="form-password" class="form-control" />
+            <label class="form-label" for="">Password</label>
+          </div>
+        
+          <!-- Submit button -->
+          <button id="login-button" type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+        
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p>Not a member? <a href="/register">Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('load', function() {
+    let button = document.getElementById('login-button');
+    button.addEventListener('click', function() {
+      jQuery.ajax({
+        url: '/api/users/login',
+        type: 'post',
+        data: JSON.stringify({email: jQuery("#form-email").val(), password: jQuery("#form-password").val()}),
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function() {
+          //login success send to my dashboard
+          document.location = '/Dashboard';
+        },
+        error: function(xhr, status, error) {
+          alert('Bad Email or Password!');
+        }
+      });
+    });
+  });
+</script>

@@ -1,1 +1,1 @@
-# tech-blog-mvc
+# full-stack-tech-blog

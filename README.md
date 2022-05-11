@@ -2,9 +2,10 @@
 
 
 ## Usage
+### Link to deployed Tech Blog
 
-Deployed on Heroku 
-her
+ https://warm-anchorage-46365.herokuapp.com/Login 
+
 ## Contributions
 
 Visit my portfolio to review my work! For other inquiries, feel free to email me at

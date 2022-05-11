@@ -6,16 +6,8 @@ let sequelize;
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
-  sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
-    {
-      host: 'localhost',
-      dialect: 'mysql',
-      port: 3306,
-    }
-  );
+  sequelize = new Sequelize('mysql://b961ec9fec1648:ba452379@us-cdbr-east-05.cleardb.net/heroku_a621a156a1f741d?reconnect=true');
+
 }
 
 module.exports = sequelize;

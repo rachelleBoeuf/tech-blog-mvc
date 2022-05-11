@@ -10,28 +10,20 @@
       </div>
       <div class="post-content col-sm-12">
         <form enctype="multipart/form-data" method="POST">
-          <!-- Name input -->
           <div class="form-outline mb-4">
             <input type="text" name="name" id="form-name" class="form-control" />
             <label class="form-label" for="">Your Name</label>
           </div>
-
-          <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" name="email" id="form-email" class="form-control" />
             <label class="form-label" for="">Email Address</label>
           </div>
-        
-          <!-- Password input -->
           <div class="form-outline mb-4">
             <input type="password" name="password" id="form-password" class="form-control" />
             <label class="form-label" for="">Password</label>
           </div>
-        
-          <!-- Submit button -->
           <button id="login-button" type="button" class="btn btn-primary btn-block mb-4">Register Now</button>
-        
-          <!-- Register buttons -->
+
           <div class="text-center">
             <p>Want to sign in? <a href="/Login">Login Now</a></p>
           </div>
@@ -41,24 +33,4 @@
   </div>
 </div>
 
-<script>
-  window.addEventListener('load', function() {
-    let button = document.getElementById('login-button');
-    button.addEventListener('click', function() {
-      jQuery.ajax({
-        url: '/api/users/',
-        type: 'post',
-        data: JSON.stringify({name: jQuery("#form-name").val(), email: jQuery("#form-email").val(), password: jQuery("#form-password").val()}),
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function() {
-          //login success send to my dashboard
-          document.location = '/Dashboard';
-        },
-        error: function(xhr, status, error) {
-          alert('Error registering... contact support for help!');
-        }
-      });
-    });
-  });
-</script>
+<script src="./js/register.js"></script>

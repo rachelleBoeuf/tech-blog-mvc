@@ -10,25 +10,19 @@
       </div>
       <div class="post-content row">
         <form enctype="multipart/form-data" method="POST">
-          <!-- Title input -->
           <div class="form-outline mb-4">
             <input type="text" name="title" id="form-title" class="form-control" />
             <label class="form-label" for="">Post Title</label>
           </div>
-        
-          <!-- Content input -->
           <div class="form-outline mb-4">
             <input type="text" rows="5" name="content" id="form-content" class="form-control" />
             <label class="form-label" for="">Post Content</label>
           </div>
-        
-          <!-- Funding input -->
           <div class="form-outline mb-4">
             <input type="text" name="funding" id="form-funding" class="form-control" />
             <label class="form-label" for="">Needed Funding</label>
           </div>
 
-          <!-- Submit button -->
           <button id="form-button" type="button" class="btn btn-primary btn-block mb-4">Create Post</button>
         </form>
       </div>
@@ -36,24 +30,4 @@
   </div>
 </div>
 
-<script>
-  window.addEventListener('load', function() {
-    let button = document.getElementById('form-button');
-    button.addEventListener('click', function() {
-      jQuery.ajax({
-        url: '/api/projects/',
-        type: 'post',
-        data: JSON.stringify({name: jQuery("#form-title").val(), description: jQuery("#form-content").val(), needed_funding: jQuery("#form-funding").val()}),
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function() {
-          //login success send to my dashboard
-          document.location = '/Dashboard';
-        },
-        error: function(xhr, status, error) {
-          alert('Error create new Post! Contact Support');
-        }
-      });
-    });
-  });
-</script>
+<script src="./js/newpost.js"></script>
